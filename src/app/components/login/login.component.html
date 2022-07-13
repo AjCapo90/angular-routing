@@ -1,1 +1,20 @@
-<p>login works!</p>
+<form class="login--input" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+  <!-- USERNAME -->
+  <label for="username">Username</label>
+  <input class="login--username_input" id="username" type="text" formControlName="username"/>
+
+  <!-- PASSWORD -->
+  <label for="password">Password</label>
+  <input class="login--username_input" id="password" type="password" formControlName="password"/>
+
+  <!-- SUBMIT -->
+  <button class="submit" type="submit" [disabled]="!loginForm.valid">Submit</button>
+
+</form>
+
+  <!-- VIEW STATE -->
+  <br><br>
+  <p><b>Username state:</b> {{loginForm.controls['username'].value}}</p>
+  <br>
+  <p><b>Password state:</b> {{loginForm.controls['password'].value}}</p>

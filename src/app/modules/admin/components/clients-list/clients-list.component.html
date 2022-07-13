@@ -1,2 +1,7 @@
-<p>clients-list works!</p>
+<div *ngFor="let user of users">
+  <app-clients-card 
+    [user]="user"
+    (complete)="onComplete(user)"
+  ></app-clients-card>
+</div>
 <app-menu></app-menu>
