@@ -9,6 +9,8 @@ import { User } from '../../../../core/app.service'
 export class ClientsCardComponent implements OnInit {
   @Input() user?: User
   @Output() complete = new EventEmitter()
+  @Output() modifyName = new EventEmitter()
+  @Output() deleteUser = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {

@@ -2,6 +2,10 @@
   {{user.id}}
   {{user.name}} - 
   {{user.address.street}}
-  <button *ngIf="!user.completed" (click)="complete.emit()" class="btn-user">Complete</button>
+  <div class="btn">
+    <button *ngIf="!user.completed" (click)="complete.emit()" class="btn-user">Complete</button>
+    <button class="modify-name-user" (click)="modifyName.emit()">Modify Name</button>
+    <button class="delete-user" (click)="deleteUser.emit()">Delete User</button>
+  </div>
 </div>
 

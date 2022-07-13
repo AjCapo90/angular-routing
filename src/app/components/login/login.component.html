@@ -1,12 +1,25 @@
+<h2>APP LOGIN</h2>
 <form class="login--input" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
   <!-- USERNAME -->
   <label for="username">Username</label>
-  <input class="login--username_input" id="username" type="text" formControlName="username"/>
+  <input 
+    class="login--username_input" 
+    [class.invalidLogin]="!loginForm.controls['username'].valid" 
+    id="username" 
+    type="text" 
+    formControlName="username"
+  />
 
   <!-- PASSWORD -->
   <label for="password">Password</label>
-  <input class="login--username_input" id="password" type="password" formControlName="password"/>
+  <input 
+    class="login--username_input" 
+    [class.invalidLogin]="!loginForm.controls['password'].valid"
+    id="password" 
+    type="password" 
+    formControlName="password"
+  />
 
   <!-- SUBMIT -->
   <button class="submit" type="submit" [disabled]="!loginForm.valid">Submit</button>

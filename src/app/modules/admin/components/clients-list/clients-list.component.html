@@ -2,6 +2,28 @@
   <app-clients-card 
     [user]="user"
     (complete)="onComplete(user)"
+    (modifyName)="onModifyName(user)"
+    (deleteUser)="onDeleteUser(user)"
   ></app-clients-card>
 </div>
+<!-- MODIFY NAME PATCH INPUT -->
+<label for="modify-name"></label>
+<input id="modify-name" placeholder="Add a suffix name" [formControl]="modifyUserName">
+<br>
+<p>Suffix: {{modifyUserName.value}}</p>
+
+
+<!-- ADD NEW USER -->
+<form [formGroup]="addNewUserForm" class="add-new-user">
+  <label for="name"></label>
+  <span>Name: <input id="name" type="text" formControlName="name"></span>
+  <label for="street"></label>
+  <span>Street: <input id="" type="text" formControlName="street"></span>
+  <button (click)="addNewUser()">Add new Client</button>
+</form>
+ <!-- INFO FOR MY STUDYING -->
+<br>
+<br>
+<p>Name: {{addNewUserForm.controls['name'].value}}</p>
+<p>Street: {{addNewUserForm.controls['street'].value}}</p>
 <app-menu></app-menu>
