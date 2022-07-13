@@ -1,0 +1,7 @@
+<div *ngIf="user" [class.completed]="user.completed" [class.odd]="user.id%2" class="user">
+  {{user.id}}
+  {{user.name}} - 
+  {{user.address.street}}
+  <button *ngIf="!user.completed" (click)="complete.emit()" class="btn-user">Complete</button>
+</div>
+

@@ -1,0 +1,29 @@
+.user {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.odd {
+  background-color: yellow;
+}
+
+.user.completed {
+  color: red;
+  text-decoration: line-through;
+}
+
+.btn-user {
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-user:hover {
+  opacity: 0.75;
+}
